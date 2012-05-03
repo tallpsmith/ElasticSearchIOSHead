@@ -15,6 +15,10 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <imageView opaque="NO" userInteractionEnabled="NO" alpha="0.40000000000000013" contentMode="center" image="bonsai2.png" id="Ud2-fc-q8U">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Host Name" minimumFontSize="17" clearButtonMode="whileEditing" id="WG5-PJ-gze">
                                 <rect key="frame" x="20" y="43" width="280" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -67,7 +71,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="twO-qG-d3I" kind="push" id="eaB-MB-Dsj"/>
+                                    <segue destination="0m9-ZL-xw9" kind="push" id="N33-pC-JHb"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -83,20 +87,67 @@
             </objects>
             <point key="canvasLocation" x="924" y="252"/>
         </scene>
-        <!--View Controller - Overview-->
-        <scene sceneID="HBP-z5-a1g">
+        <!--View Controller - Indexes-->
+        <scene sceneID="CUc-Qy-0ZF">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9th-eS-H8o" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="twO-qG-d3I" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="lM3-4Q-nAh">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wTE-EG-hd3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="Indexes" title="Indexes" id="fqm-R4-pkZ" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tM0-Gk-37b">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="center" image="crystal128.png" id="dLO-U0-VNr">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="367"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Overview" id="pqn-oW-GWJ"/>
+                    <tabBarItem key="tabBarItem" title="Indexes" image="crystal128.png" id="iv6-Pr-HXa"/>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="1371" y="252"/>
+            <point key="canvasLocation" x="1815" y="802"/>
+        </scene>
+        <!--View Controller - Servers-->
+        <scene sceneID="mpt-hu-p3w">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ulI-Ag-9nb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="Servers" title="Servers" id="CLU-Lr-rOQ" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iqz-Gj-ehg">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.40000000000000013" contentMode="center" image="intranet128.png" id="yfK-X7-bf5">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="367"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Servers" image="intranet128.png" id="adG-cZ-vbE"/>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1815" y="226"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="j6K-dL-8Yw">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kjc-3R-QN0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tabBarController definesPresentationContext="YES" id="0m9-ZL-xw9" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="u1h-Dn-sAI"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="cL2-Cb-jxk">
+                        <rect key="frame" x="129" y="330" width="163" height="49"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="CLU-Lr-rOQ" kind="relationship" relationship="viewControllers" id="xfl-dn-vJr"/>
+                        <segue destination="fqm-R4-pkZ" kind="relationship" relationship="viewControllers" id="Wlh-rX-z4U"/>
+                    </connections>
+                </tabBarController>
+            </objects>
+            <point key="canvasLocation" x="1391" y="233"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="3Hs-3Z-zgw">
@@ -117,6 +168,11 @@
             <point key="canvasLocation" x="398" y="252"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="bonsai2.png" width="300" height="300"/>
+        <image name="crystal128.png" width="128" height="128"/>
+        <image name="intranet128.png" width="128" height="128"/>
+    </resources>
     <classes>
         <class className="ESRKViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ESRKViewController.h"/>
@@ -124,6 +180,7 @@
                 <relationship kind="action" name="textFieldEndOnExit:"/>
                 <relationship kind="outlet" name="host" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="port" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="useSSL" candidateClass="UISwitch"/>
             </relationships>
         </class>
     </classes>

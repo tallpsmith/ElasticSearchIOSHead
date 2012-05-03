@@ -49,6 +49,11 @@
     BOOL shouldUseSSL = [self.useSSL isOn];
     
     NSLog(@"Connecting to %@:%@ using SSL %d", [self.host text], [self.port text], shouldUseSSL);
+    
+    UITabBarController *tabBarController = segue.destinationViewController;
+    
+    tabBarController.title = @"Fake Cluster Name";
+
 }
 
 - (IBAction)textFieldEndOnExit:(id)sender {

@@ -16,6 +16,9 @@
 		7E00CA571552967E000B5945 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E00CA551552967E000B5945 /* MainStoryboard_iPhone.storyboard */; };
 		7E00CA5A1552967E000B5945 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E00CA581552967E000B5945 /* MainStoryboard_iPad.storyboard */; };
 		7E00CA5D1552967E000B5945 /* ESRKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E00CA5C1552967E000B5945 /* ESRKViewController.m */; };
+		7E00CA641552AF23000B5945 /* bonsai2.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E00CA631552AF23000B5945 /* bonsai2.png */; };
+		7E00CA661552B018000B5945 /* intranet128.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E00CA651552B018000B5945 /* intranet128.png */; };
+		7E00CA681552B2B4000B5945 /* crystal128.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E00CA671552B2B4000B5945 /* crystal128.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +36,9 @@
 		7E00CA591552967E000B5945 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		7E00CA5B1552967E000B5945 /* ESRKViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ESRKViewController.h; sourceTree = "<group>"; };
 		7E00CA5C1552967E000B5945 /* ESRKViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ESRKViewController.m; sourceTree = "<group>"; };
+		7E00CA631552AF23000B5945 /* bonsai2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bonsai2.png; sourceTree = "<group>"; };
+		7E00CA651552B018000B5945 /* intranet128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = intranet128.png; sourceTree = "<group>"; };
+		7E00CA671552B2B4000B5945 /* crystal128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crystal128.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,12 +99,23 @@
 		7E00CA4A1552967E000B5945 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				7E00CA691552B2BF000B5945 /* Imaes */,
 				7E00CA4B1552967E000B5945 /* ElasticSearchHeadIOS-Info.plist */,
 				7E00CA4C1552967E000B5945 /* InfoPlist.strings */,
 				7E00CA4F1552967E000B5945 /* main.m */,
 				7E00CA511552967E000B5945 /* ElasticSearchHeadIOS-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7E00CA691552B2BF000B5945 /* Imaes */ = {
+			isa = PBXGroup;
+			children = (
+				7E00CA671552B2B4000B5945 /* crystal128.png */,
+				7E00CA651552B018000B5945 /* intranet128.png */,
+				7E00CA631552AF23000B5945 /* bonsai2.png */,
+			);
+			name = Imaes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -155,6 +172,9 @@
 				7E00CA4E1552967E000B5945 /* InfoPlist.strings in Resources */,
 				7E00CA571552967E000B5945 /* MainStoryboard_iPhone.storyboard in Resources */,
 				7E00CA5A1552967E000B5945 /* MainStoryboard_iPad.storyboard in Resources */,
+				7E00CA641552AF23000B5945 /* bonsai2.png in Resources */,
+				7E00CA661552B018000B5945 /* intranet128.png in Resources */,
+				7E00CA681552B2B4000B5945 /* crystal128.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

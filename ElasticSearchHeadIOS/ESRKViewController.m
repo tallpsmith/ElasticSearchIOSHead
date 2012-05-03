@@ -9,10 +9,16 @@
 #import "ESRKViewController.h"
 
 @interface ESRKViewController ()
+@property (weak, nonatomic) IBOutlet UITextField *host;
+@property (weak, nonatomic) IBOutlet UITextField *port;
+@property (weak, nonatomic) IBOutlet UISwitch *useSSL;
 
 @end
 
 @implementation ESRKViewController
+@synthesize host;
+@synthesize port;
+@synthesize useSSL;
 
 - (void)viewDidLoad
 {
@@ -22,6 +28,9 @@
 
 - (void)viewDidUnload
 {
+    [self setHost:nil];
+    [self setPort:nil];
+    [self setUseSSL:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -35,4 +44,15 @@
     }
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+ 
+    BOOL shouldUseSSL = [self.useSSL isOn];
+    
+    NSLog(@"Connecting to %@:%@ using SSL %d", [self.host text], [self.port text], shouldUseSSL);
+}
+
+- (IBAction)textFieldEndOnExit:(id)sender {
+    
+    
+}
 @end

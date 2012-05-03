@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface ESRKViewController : UIViewController
+- (IBAction)textFieldEndOnExit:(id)sender;
 
 @end

@@ -23,15 +23,15 @@
 		7E00CA431552967E000B5945 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		7E00CA451552967E000B5945 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7E00CA471552967E000B5945 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		7E00CA4B1552967E000B5945 /* ElasticSearchHeadIOS-Info.plist */ = {isa = PBXFileReference; path = "ElasticSearchHeadIOS-Info.plist"; sourceTree = "<group>"; };
+		7E00CA4B1552967E000B5945 /* ElasticSearchHeadIOS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ElasticSearchHeadIOS-Info.plist"; sourceTree = "<group>"; };
 		7E00CA4D1552967E000B5945 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7E00CA4F1552967E000B5945 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		7E00CA511552967E000B5945 /* ElasticSearchHeadIOS-Prefix.pch */ = {isa = PBXFileReference; path = "ElasticSearchHeadIOS-Prefix.pch"; sourceTree = "<group>"; };
-		7E00CA521552967E000B5945 /* ESRKAppDelegate.h */ = {isa = PBXFileReference; path = ESRKAppDelegate.h; sourceTree = "<group>"; };
+		7E00CA511552967E000B5945 /* ElasticSearchHeadIOS-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ElasticSearchHeadIOS-Prefix.pch"; sourceTree = "<group>"; };
+		7E00CA521552967E000B5945 /* ESRKAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ESRKAppDelegate.h; sourceTree = "<group>"; };
 		7E00CA531552967E000B5945 /* ESRKAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ESRKAppDelegate.m; sourceTree = "<group>"; };
 		7E00CA561552967E000B5945 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		7E00CA591552967E000B5945 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
-		7E00CA5B1552967E000B5945 /* ESRKViewController.h */ = {isa = PBXFileReference; path = ESRKViewController.h; sourceTree = "<group>"; };
+		7E00CA5B1552967E000B5945 /* ESRKViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ESRKViewController.h; sourceTree = "<group>"; };
 		7E00CA5C1552967E000B5945 /* ESRKViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ESRKViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -255,6 +255,7 @@
 				GCC_PREFIX_HEADER = "ElasticSearchHeadIOS/ElasticSearchHeadIOS-Prefix.pch";
 				INFOPLIST_FILE = "ElasticSearchHeadIOS/ElasticSearchHeadIOS-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -266,6 +267,7 @@
 				GCC_PREFIX_HEADER = "ElasticSearchHeadIOS/ElasticSearchHeadIOS-Prefix.pch";
 				INFOPLIST_FILE = "ElasticSearchHeadIOS/ElasticSearchHeadIOS-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

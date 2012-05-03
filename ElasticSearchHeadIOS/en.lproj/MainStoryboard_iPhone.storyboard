@@ -80,6 +80,7 @@
                     <navigationItem key="navigationItem" title="Connection" id="Vqo-fy-QvK"/>
                     <connections>
                         <outlet property="host" destination="WG5-PJ-gze" id="j1y-C1-WL4"/>
+                        <outlet property="hostName" destination="WG5-PJ-gze" id="SsR-B5-Vd6"/>
                         <outlet property="port" destination="YDy-Kw-L5j" id="l97-0y-FTM"/>
                         <outlet property="useSSL" destination="fLp-zq-qWh" id="SxR-c5-M5J"/>
                     </connections>
@@ -108,27 +109,6 @@
             </objects>
             <point key="canvasLocation" x="1815" y="802"/>
         </scene>
-        <!--View Controller - Servers-->
-        <scene sceneID="mpt-hu-p3w">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ulI-Ag-9nb" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController storyboardIdentifier="Servers" title="Servers" id="CLU-Lr-rOQ" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="iqz-Gj-ehg">
-                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" alpha="0.40000000000000013" contentMode="center" image="intranet128.png" id="yfK-X7-bf5">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="367"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Servers" image="intranet128.png" id="adG-cZ-vbE"/>
-                </viewController>
-            </objects>
-            <point key="canvasLocation" x="1815" y="226"/>
-        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="j6K-dL-8Yw">
             <objects>
@@ -142,12 +122,58 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="CLU-Lr-rOQ" kind="relationship" relationship="viewControllers" id="xfl-dn-vJr"/>
+                        <segue destination="Qld-PB-akW" kind="relationship" relationship="viewControllers" id="AAN-2b-Kdb"/>
                         <segue destination="fqm-R4-pkZ" kind="relationship" relationship="viewControllers" id="Wlh-rX-z4U"/>
                     </connections>
                 </tabBarController>
             </objects>
             <point key="canvasLocation" x="1391" y="233"/>
+        </scene>
+        <!--Server View Controller - Servers-->
+        <scene sceneID="zLg-yX-AhZ">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MMU-ts-cMC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tableViewController id="Qld-PB-akW" customClass="ESRKServerViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="LV1-PP-jG9">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="detailDisclosureButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="G3b-Aa-tLZ" detailTextLabel="g7W-Ud-5fq" style="IBUITableViewCellStyleValue1" id="Drk-gR-7iI">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="G3b-Aa-tLZ">
+                                            <rect key="frame" x="10" y="11" width="35" height="21"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="g7W-Ud-5fq">
+                                            <rect key="frame" x="233" y="11" width="44" height="21"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.2196078431372549" green="0.32941176470588235" blue="0.52941176470588236" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Qld-PB-akW" id="aWn-RG-I0R"/>
+                            <outlet property="delegate" destination="Qld-PB-akW" id="Lm4-RU-OOO"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Servers" id="QyC-6M-Bry"/>
+                </tableViewController>
+            </objects>
+            <point key="canvasLocation" x="1813" y="240"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="3Hs-3Z-zgw">
@@ -171,14 +197,17 @@
     <resources>
         <image name="bonsai2.png" width="300" height="300"/>
         <image name="crystal128.png" width="128" height="128"/>
-        <image name="intranet128.png" width="128" height="128"/>
     </resources>
     <classes>
+        <class className="ESRKServerViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ESRKServerViewController.h"/>
+        </class>
         <class className="ESRKViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ESRKViewController.h"/>
             <relationships>
                 <relationship kind="action" name="textFieldEndOnExit:"/>
                 <relationship kind="outlet" name="host" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="hostName" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="port" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="useSSL" candidateClass="UISwitch"/>
             </relationships>

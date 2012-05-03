@@ -16,6 +16,7 @@
 @end
 
 @implementation ESRKViewController
+@synthesize hostName;
 @synthesize host;
 @synthesize port;
 @synthesize useSSL;
@@ -24,6 +25,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+
 }
 
 - (void)viewDidUnload
@@ -31,6 +33,7 @@
     [self setHost:nil];
     [self setPort:nil];
     [self setUseSSL:nil];
+    [self setHostName:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }

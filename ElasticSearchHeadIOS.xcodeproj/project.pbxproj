@@ -19,6 +19,7 @@
 		7E00CA641552AF23000B5945 /* bonsai2.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E00CA631552AF23000B5945 /* bonsai2.png */; };
 		7E00CA661552B018000B5945 /* intranet128.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E00CA651552B018000B5945 /* intranet128.png */; };
 		7E00CA681552B2B4000B5945 /* crystal128.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E00CA671552B2B4000B5945 /* crystal128.png */; };
+		7E00CA6C1552B57A000B5945 /* ESRKServerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E00CA6B1552B57A000B5945 /* ESRKServerViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,8 @@
 		7E00CA631552AF23000B5945 /* bonsai2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bonsai2.png; sourceTree = "<group>"; };
 		7E00CA651552B018000B5945 /* intranet128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = intranet128.png; sourceTree = "<group>"; };
 		7E00CA671552B2B4000B5945 /* crystal128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crystal128.png; sourceTree = "<group>"; };
+		7E00CA6A1552B57A000B5945 /* ESRKServerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESRKServerViewController.h; sourceTree = "<group>"; };
+		7E00CA6B1552B57A000B5945 /* ESRKServerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESRKServerViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +91,8 @@
 				7E00CA521552967E000B5945 /* ESRKAppDelegate.h */,
 				7E00CA531552967E000B5945 /* ESRKAppDelegate.m */,
 				7E00CA551552967E000B5945 /* MainStoryboard_iPhone.storyboard */,
+				7E00CA6A1552B57A000B5945 /* ESRKServerViewController.h */,
+				7E00CA6B1552B57A000B5945 /* ESRKServerViewController.m */,
 				7E00CA581552967E000B5945 /* MainStoryboard_iPad.storyboard */,
 				7E00CA5B1552967E000B5945 /* ESRKViewController.h */,
 				7E00CA5C1552967E000B5945 /* ESRKViewController.m */,
@@ -188,6 +193,7 @@
 				7E00CA501552967E000B5945 /* main.m in Sources */,
 				7E00CA541552967E000B5945 /* ESRKAppDelegate.m in Sources */,
 				7E00CA5D1552967E000B5945 /* ESRKViewController.m in Sources */,
+				7E00CA6C1552B57A000B5945 /* ESRKServerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

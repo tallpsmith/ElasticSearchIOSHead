@@ -7,6 +7,7 @@
 //
 
 #import "ESRKAppDelegate.h"
+#import "RestKit/RestKit.h"
 
 @implementation ESRKAppDelegate
 

@@ -14,11 +14,19 @@
 
 @implementation ESRKServerViewController
 
+
+
+
+- (void) setUpRestKit
+{
+    NSLog(@"Connecting to %@", [[RKClient sharedClient] baseURL]);
+}
+
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
     if (self) {
-        // Custom initialization
+        [self setUpRestKit];
     }
     return self;
 }
@@ -27,6 +35,8 @@
 {
     [super viewDidLoad];
 
+    [self setUpRestKit];
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  

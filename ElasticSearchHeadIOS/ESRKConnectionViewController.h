@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ESRKViewController : UIViewController
+@interface ESRKConnectionViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UITextField *hostName;
 - (IBAction)textFieldEndOnExit:(id)sender;
 

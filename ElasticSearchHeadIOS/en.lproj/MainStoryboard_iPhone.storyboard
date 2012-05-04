@@ -6,11 +6,11 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1181"/>
     </dependencies>
     <scenes>
-        <!--View Controller - Connection-->
+        <!--Connection View Controller - Connection-->
         <scene sceneID="5">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
-                <viewController id="2" customClass="ESRKViewController" sceneMemberID="viewController">
+                <viewController id="2" customClass="ESRKConnectionViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -88,11 +88,11 @@
             </objects>
             <point key="canvasLocation" x="924" y="252"/>
         </scene>
-        <!--View Controller - Indexes-->
+        <!--Server View Controller - Indexes-->
         <scene sceneID="CUc-Qy-0ZF">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wTE-EG-hd3" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController storyboardIdentifier="Indexes" title="Indexes" id="fqm-R4-pkZ" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Indexes" title="Indexes" id="fqm-R4-pkZ" customClass="ESRKServerViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tM0-Gk-37b">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -115,7 +115,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kjc-3R-QN0" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tabBarController definesPresentationContext="YES" id="0m9-ZL-xw9" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="u1h-Dn-sAI"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="cL2-Cb-jxk">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -139,7 +139,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="detailDisclosureButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="G3b-Aa-tLZ" detailTextLabel="g7W-Ud-5fq" style="IBUITableViewCellStyleValue1" id="Drk-gR-7iI">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="detailDisclosureButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="G3b-Aa-tLZ" detailTextLabel="ZcS-8e-FqE" style="IBUITableViewCellStyleSubtitle" id="Drk-gR-7iI">
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -147,17 +147,17 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="G3b-Aa-tLZ">
-                                            <rect key="frame" x="10" y="11" width="35" height="21"/>
+                                            <rect key="frame" x="10" y="2" width="38" height="22"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="g7W-Ud-5fq">
-                                            <rect key="frame" x="233" y="11" width="44" height="21"/>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Detail" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ZcS-8e-FqE">
+                                            <rect key="frame" x="10" y="24" width="36" height="18"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.2196078431372549" green="0.32941176470588235" blue="0.52941176470588236" alpha="1" colorSpace="calibratedRGB"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </label>
                                     </subviews>
@@ -199,11 +199,8 @@
         <image name="crystal128.png" width="128" height="128"/>
     </resources>
     <classes>
-        <class className="ESRKServerViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ESRKServerViewController.h"/>
-        </class>
-        <class className="ESRKViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ESRKViewController.h"/>
+        <class className="ESRKConnectionViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ESRKConnectionViewController.h"/>
             <relationships>
                 <relationship kind="action" name="textFieldEndOnExit:"/>
                 <relationship kind="outlet" name="host" candidateClass="UITextField"/>
@@ -211,6 +208,9 @@
                 <relationship kind="outlet" name="port" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="useSSL" candidateClass="UISwitch"/>
             </relationships>
+        </class>
+        <class className="ESRKServerViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ESRKServerViewController.h"/>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

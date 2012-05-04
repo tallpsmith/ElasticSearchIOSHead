@@ -8,12 +8,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ElasticSearchHeadIOS/ESRKServerViewController.m"
-         timestampString = "357742816.10457"
+         timestampString = "357797601.174029"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "19"
-         endingLineNumber = "19"
-         landmarkName = "-initWithStyle:"
+         startingLineNumber = "27"
+         endingLineNumber = "27"
+         landmarkName = "-setUpRestKit"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -21,12 +21,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ElasticSearchHeadIOS/ESRKServerViewController.m"
-         timestampString = "357744644.183557"
+         timestampString = "357797601.174029"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "80"
-         endingLineNumber = "80"
-         landmarkName = "-tableView:cellForRowAtIndexPath:"
+         startingLineNumber = "90"
+         endingLineNumber = "90"
+         landmarkName = "-setUpRestKit"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

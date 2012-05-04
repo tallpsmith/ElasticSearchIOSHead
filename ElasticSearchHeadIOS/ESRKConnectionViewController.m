@@ -6,16 +6,17 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "ESRKViewController.h"
+#import "ESRKConnectionViewController.h"
+#import "ESRKServerViewController.h"
 
-@interface ESRKViewController ()
+@interface ESRKConnectionViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *host;
 @property (weak, nonatomic) IBOutlet UITextField *port;
 @property (weak, nonatomic) IBOutlet UISwitch *useSSL;
 
 @end
 
-@implementation ESRKViewController
+@implementation ESRKConnectionViewController
 @synthesize hostName;
 @synthesize host;
 @synthesize port;
@@ -51,12 +52,14 @@
  
     BOOL shouldUseSSL = [self.useSSL isOn];
     
-    NSLog(@"Connecting to %@:%@ using SSL %d", [self.host text], [self.port text], shouldUseSSL);
+    NSString *sslSuffix = shouldUseSSL?@"s":@"";
     
-    UITabBarController *tabBarController = segue.destinationViewController;
+    NSString *baseUrl = [NSString stringWithFormat:@"http%@://%@:%@/",sslSuffix, [self.host text], [self.port text]];
     
-    tabBarController.title = @"Fake Cluster Name";
-
+    RKClient *client = [RKClient clientWithBaseURLString:baseUrl];
+    
+    [RKClient setSharedClient:client];
+    
 }
 
 - (IBAction)textFieldEndOnExit:(id)sender {

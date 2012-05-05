@@ -223,3 +223,369 @@
 }
 
 @end
+
+/*
+{
+  "cluster_name" : "paul",
+  "master_node" : "FGewvE3-TEKjXugOGJpWmQ",
+  "blocks" : {
+  },
+  "nodes" : {
+    "FGewvE3-TEKjXugOGJpWmQ" : {
+      "name" : "Namor the Sub-Mariner",
+      "transport_address" : "inet[/192.168.0.12:9300]",
+      "attributes" : {
+      }
+    }
+  },
+  "metadata" : {
+    "templates" : {
+    },
+    "indices" : {
+      "melpaul" : {
+        "state" : "open",
+        "settings" : {
+          "index.number_of_replicas" : "1",
+          "index.number_of_shards" : "5",
+          "index.version.created" : "190299"
+        },
+        "mappings" : {
+          "project" : {
+            "properties" : {
+              "projectAddress" : {
+                "type" : "string"
+              },
+              "id" : {
+                "type" : "string"
+              },
+              "suburb" : {
+                "type" : "string"
+              },
+              "name" : {
+                "type" : "string"
+              },
+              "state" : {
+                "type" : "string"
+              },
+              "postalAddress" : {
+                "type" : "string"
+              },
+              "ownerOrganizationID" : {
+                "type" : "long"
+              },
+              "shortName" : {
+                "type" : "string"
+              },
+              "deliveryAddress" : {
+                "type" : "string"
+              },
+              "country" : {
+                "type" : "string"
+              }
+            }
+          },
+          "organization" : {
+            "properties" : {
+              "id" : {
+                "type" : "string"
+              },
+              "tradingName" : {
+                "type" : "string"
+              },
+              "name" : {
+                "type" : "string"
+              },
+              "extParticipant" : {
+                "type" : "string"
+              },
+              "code" : {
+                "type" : "string"
+              }
+            }
+          },
+          "task" : {
+            "properties" : {
+              "aggregateCount" : {
+                "type" : "long"
+              },
+              "dueDateIso" : {
+                "type" : "string"
+              },
+              "assignedByUser" : {
+                "type" : "string"
+              },
+              "pertinent" : {
+                "type" : "boolean"
+              },
+              "assignedByUserId" : {
+                "type" : "long"
+              },
+              "assignedBy" : {
+                "type" : "string"
+              },
+              "projectId" : {
+                "type" : "long"
+              },
+              "type" : {
+                "type" : "string"
+              },
+              "id" : {
+                "type" : "string"
+              },
+              "creationDate" : {
+                "type" : "long"
+              },
+              "assignedToUserId" : {
+                "type" : "long"
+              },
+              "description" : {
+                "type" : "string"
+              },
+              "featureId" : {
+                "type" : "string"
+              },
+              "aggregated" : {
+                "type" : "boolean"
+              },
+              "assignedToUser" : {
+                "type" : "string"
+              },
+              "projectName" : {
+                "type" : "string"
+              },
+              "dueDate" : {
+                "type" : "long"
+              },
+              "referenceLabel" : {
+                "type" : "string"
+              }
+            }
+          },
+          "user" : {
+            "properties" : {
+              "sortlastName" : {
+                "type" : "string"
+              },
+              "position" : {
+                "type" : "string"
+              },
+              "lastName" : {
+                "type" : "string"
+              },
+              "phone" : {
+                "type" : "string"
+              },
+              "accessEnabled" : {
+                "type" : "string"
+              },
+              "orgName" : {
+                "type" : "string"
+              },
+              "directoryVisibility" : {
+                "type" : "string"
+              },
+              "id" : {
+                "type" : "string"
+              },
+              "orgId" : {
+                "type" : "string"
+              },
+              "orgTradingName" : {
+                "type" : "string"
+              },
+              "title" : {
+                "type" : "string"
+              },
+              "divisionName" : {
+                "type" : "string"
+              },
+              "email" : {
+                "type" : "string"
+              },
+              "sortfirstName" : {
+                "type" : "string"
+              },
+              "userName" : {
+                "type" : "string"
+              },
+              "extParticipant" : {
+                "type" : "string"
+              },
+              "firstName" : {
+                "type" : "string"
+              },
+              "accountUnlocked" : {
+                "type" : "string"
+              },
+              "mobile" : {
+                "type" : "string"
+              }
+            }
+          }
+        },
+        "aliases" : [ ]
+      }
+    }
+  },
+  "routing_table" : {
+    "indices" : {
+      "melpaul" : {
+        "shards" : {
+          "0" : [ {
+            "state" : "STARTED",
+            "primary" : true,
+            "node" : "FGewvE3-TEKjXugOGJpWmQ",
+            "relocating_node" : null,
+            "shard" : 0,
+            "index" : "melpaul"
+          }, {
+            "state" : "UNASSIGNED",
+            "primary" : false,
+            "node" : null,
+            "relocating_node" : null,
+            "shard" : 0,
+            "index" : "melpaul"
+          } ],
+          "1" : [ {
+            "state" : "STARTED",
+            "primary" : true,
+            "node" : "FGewvE3-TEKjXugOGJpWmQ",
+            "relocating_node" : null,
+            "shard" : 1,
+            "index" : "melpaul"
+          }, {
+            "state" : "UNASSIGNED",
+            "primary" : false,
+            "node" : null,
+            "relocating_node" : null,
+            "shard" : 1,
+            "index" : "melpaul"
+          } ],
+          "2" : [ {
+            "state" : "STARTED",
+            "primary" : true,
+            "node" : "FGewvE3-TEKjXugOGJpWmQ",
+            "relocating_node" : null,
+            "shard" : 2,
+            "index" : "melpaul"
+          }, {
+            "state" : "UNASSIGNED",
+            "primary" : false,
+            "node" : null,
+            "relocating_node" : null,
+            "shard" : 2,
+            "index" : "melpaul"
+          } ],
+          "3" : [ {
+            "state" : "STARTED",
+            "primary" : true,
+            "node" : "FGewvE3-TEKjXugOGJpWmQ",
+            "relocating_node" : null,
+            "shard" : 3,
+            "index" : "melpaul"
+          }, {
+            "state" : "UNASSIGNED",
+            "primary" : false,
+            "node" : null,
+            "relocating_node" : null,
+            "shard" : 3,
+            "index" : "melpaul"
+          } ],
+          "4" : [ {
+            "state" : "STARTED",
+            "primary" : true,
+            "node" : "FGewvE3-TEKjXugOGJpWmQ",
+            "relocating_node" : null,
+            "shard" : 4,
+            "index" : "melpaul"
+          }, {
+            "state" : "UNASSIGNED",
+            "primary" : false,
+            "node" : null,
+            "relocating_node" : null,
+            "shard" : 4,
+            "index" : "melpaul"
+          } ]
+        }
+      }
+    }
+  },
+  "routing_nodes" : {
+    "unassigned" : [ {
+      "state" : "UNASSIGNED",
+      "primary" : false,
+      "node" : null,
+      "relocating_node" : null,
+      "shard" : 0,
+      "index" : "melpaul"
+    }, {
+      "state" : "UNASSIGNED",
+      "primary" : false,
+      "node" : null,
+      "relocating_node" : null,
+      "shard" : 1,
+      "index" : "melpaul"
+    }, {
+      "state" : "UNASSIGNED",
+      "primary" : false,
+      "node" : null,
+      "relocating_node" : null,
+      "shard" : 2,
+      "index" : "melpaul"
+    }, {
+      "state" : "UNASSIGNED",
+      "primary" : false,
+      "node" : null,
+      "relocating_node" : null,
+      "shard" : 3,
+      "index" : "melpaul"
+    }, {
+      "state" : "UNASSIGNED",
+      "primary" : false,
+      "node" : null,
+      "relocating_node" : null,
+      "shard" : 4,
+      "index" : "melpaul"
+    } ],
+    "nodes" : {
+      "FGewvE3-TEKjXugOGJpWmQ" : [ {
+        "state" : "STARTED",
+        "primary" : true,
+        "node" : "FGewvE3-TEKjXugOGJpWmQ",
+        "relocating_node" : null,
+        "shard" : 0,
+        "index" : "melpaul"
+      }, {
+        "state" : "STARTED",
+        "primary" : true,
+        "node" : "FGewvE3-TEKjXugOGJpWmQ",
+        "relocating_node" : null,
+        "shard" : 1,
+        "index" : "melpaul"
+      }, {
+        "state" : "STARTED",
+        "primary" : true,
+        "node" : "FGewvE3-TEKjXugOGJpWmQ",
+        "relocating_node" : null,
+        "shard" : 2,
+        "index" : "melpaul"
+      }, {
+        "state" : "STARTED",
+        "primary" : true,
+        "node" : "FGewvE3-TEKjXugOGJpWmQ",
+        "relocating_node" : null,
+        "shard" : 3,
+        "index" : "melpaul"
+      }, {
+        "state" : "STARTED",
+        "primary" : true,
+        "node" : "FGewvE3-TEKjXugOGJpWmQ",
+        "relocating_node" : null,
+        "shard" : 4,
+        "index" : "melpaul"
+      } ]
+    }
+  },
+  "allocations" : [ ]
+}
+ */

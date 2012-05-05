@@ -171,6 +171,9 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Servers" id="QyC-6M-Bry"/>
+                    <connections>
+                        <outlet property="tableView" destination="LV1-PP-jG9" id="KGf-Sg-hJD"/>
+                    </connections>
                 </tableViewController>
             </objects>
             <point key="canvasLocation" x="1813" y="240"/>
@@ -198,21 +201,6 @@
         <image name="bonsai2.png" width="300" height="300"/>
         <image name="crystal128.png" width="128" height="128"/>
     </resources>
-    <classes>
-        <class className="ESRKConnectionViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ESRKConnectionViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="textFieldEndOnExit:"/>
-                <relationship kind="outlet" name="host" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="hostName" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="port" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="useSSL" candidateClass="UISwitch"/>
-            </relationships>
-        </class>
-        <class className="ESRKServerViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ESRKServerViewController.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

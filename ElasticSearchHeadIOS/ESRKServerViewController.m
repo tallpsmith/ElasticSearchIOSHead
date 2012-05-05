@@ -7,20 +7,97 @@
 //
 
 #import "ESRKServerViewController.h"
+#import "ESRKClusterHealth.h"
+#import "ESRKNode.h"
+#import "ESRKClusterState.h"
 
-@interface ESRKServerViewController ()
+@interface ESRKServerViewController () {
+    ESRKClusterState *clusterState;
+}
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+
+@property ESRKClusterState *clusterState;
 
 @end
 
 @implementation ESRKServerViewController
 
+@synthesize tableView;
+@synthesize clusterState;
 
 
 
 - (void) setUpRestKit
 {
     NSLog(@"Connecting to %@", [[RKClient sharedClient] baseURL]);
+    
+    RKObjectMapping *nodeMapping = [RKObjectMapping mappingForClass:[ESRKNode class]];
+    nodeMapping.forceCollectionMapping=YES;
+    
+    [nodeMapping mapKeyOfNestedDictionaryToAttribute:@"nodeId"];
+    
+    [nodeMapping mapKeyPath:@"(nodeId).name" toAttribute:@"nodeName"];
+    [nodeMapping mapKeyPath:@"(nodeId).transport_address" toAttribute:@"transportAddress"];
+    
+    RKObjectMapping *clusterStateMapping = [RKObjectMapping mappingForClass:[ESRKClusterState class]];
+    [clusterStateMapping mapKeyPath:@"cluster_name" toAttribute:@"clusterName"];
+    [clusterStateMapping mapKeyPath:@"master_node" toAttribute:@"masterNode"];
+    
+    [clusterStateMapping mapKeyPath:@"nodes" toRelationship:@"nodes" withMapping:nodeMapping];
+    
+    NSURL *baseURL = [RKClient sharedClient].baseURL;
+    RKObjectManager *manager =  [RKObjectManager objectManagerWithBaseURL:baseURL] ;
+    
+    manager.client.cachePolicy = RKRequestCachePolicyNone; 
+//    manager.client.authenticationType = RKRequestAuthenticationTypeNone;
+    
+    // this deprecation is due to the use of blocks for async callback
+    //[manager loadObjectsAtResourcePath:@"/_cluster/health" objectMapping:objectMapping delegate:self];
+    /*[manager loadObjectsAtResourcePath:@"/_cluster/state" objectMapping:clusterStateMapping delegate:self];*/
+    
+    NSString *clusterStateResourcePath = @"/_cluster/state";
+    
+    [manager.mappingProvider setMapping:clusterStateMapping forKeyPath:@""];
+    
+    [manager loadObjectsAtResourcePath:clusterStateResourcePath usingBlock:^(RKObjectLoader* loader) {
+        loader.objectMapping = [[RKObjectManager sharedManager].mappingProvider objectMappingForClass:[ESRKClusterState class]];
+        loader.method = RKRequestMethodGET;
+    }];
+    
 }
+
+- (void)objectLoader:(RKObjectLoader *)objectLoader didLoadObjects:(NSArray *)objects {
+    //ESRKClusterHealth *newClusterHealth = [objects objectAtIndex:0];
+    //NSLog(@"Loaded Cluster Health -> ClusterName: %@, Status: %@", newClusterHealth.clusterName, newClusterHealth.status);
+    //self.clusterHealth = newClusterHealth;
+    
+    self.clusterState = [objects objectAtIndex:0];
+    
+    [self.tableView reloadData];
+
+    
+}
+
+- (void)objectLoader:(RKObjectLoader *)loader willMapData:(inout id *)mappableData
+
+{
+    NSLog(@" willMapData");
+}
+
+- (void)objectLoaderDidFinishLoading:(RKObjectLoader *)objectLoader
+{
+    NSLog(@"did finish loading");
+    
+}
+- (void)objectLoaderDidLoadUnexpectedResponse:(RKObjectLoader *)objectLoader
+{
+    NSLog(@"Unexpected response");
+}
+
+- (void)objectLoader:(RKObjectLoader *)objectLoader didFailWithError:(NSError *)error {
+    NSLog(@"Encountered an error: %@", error);
+}
+
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -47,6 +124,7 @@
 - (void)viewDidUnload
 {
     [self setTableView:nil];
+    [self setTableView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -63,14 +141,14 @@
 {
 #warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 2;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 1;
+    return self.clusterState.nodes.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -80,15 +158,14 @@
     
     // Configure the cell...
     NSString *cellText;
-    if(indexPath.section == 0){
-       cellText = @"Server node"; 
-    } else{
-        cellText = @"Some other client/non-data node";
-    }
     
-    UILabel *serverNameLabel = [cell textLabel];
+    ESRKNode *node = [self.clusterState.nodes objectAtIndex:indexPath.row];
+    
+    UILabel *titleLabel = [cell textLabel];
+    UILabel *detailTextLable = [cell detailTextLabel];
                                 
-    [serverNameLabel setText:cellText];
+    [titleLabel setText:node.nodeName];
+    [detailTextLable setText:node.transportAddress];
     
     return cell;
 }

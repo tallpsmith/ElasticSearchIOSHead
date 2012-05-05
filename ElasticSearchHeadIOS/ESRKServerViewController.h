@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Restkit/RestKit.h"
 
-@interface ESRKServerViewController : UITableViewController {
+@interface ESRKServerViewController : UITableViewController <RKObjectLoaderDelegate> {
 
 }
 

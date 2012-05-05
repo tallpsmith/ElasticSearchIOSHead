@@ -112,6 +112,8 @@
 		7E1AEDF615538C0A0068BB8E /* ESRKNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESRKNode.m; sourceTree = "<group>"; };
 		7E1AEDF715538C0A0068BB8E /* ESRKClusterState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESRKClusterState.h; sourceTree = "<group>"; };
 		7E1AEDF815538C0A0068BB8E /* ESRKClusterState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESRKClusterState.m; sourceTree = "<group>"; };
+		7E1AEE02155391B30068BB8E /* StatusToColourTransformer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StatusToColourTransformer.h; sourceTree = "<group>"; };
+		7E1AEE03155391B30068BB8E /* StatusToColourTransformer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StatusToColourTransformer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +176,8 @@
 		7E00CA491552967E000B5945 /* ElasticSearchHeadIOS */ = {
 			isa = PBXGroup;
 			children = (
+				7E1AEE02155391B30068BB8E /* StatusToColourTransformer.h */,
+				7E1AEE03155391B30068BB8E /* StatusToColourTransformer.m */,
 				7E00CA521552967E000B5945 /* ESRKAppDelegate.h */,
 				7E00CA531552967E000B5945 /* ESRKAppDelegate.m */,
 				7E1AEDFC15538C0F0068BB8E /* Models */,

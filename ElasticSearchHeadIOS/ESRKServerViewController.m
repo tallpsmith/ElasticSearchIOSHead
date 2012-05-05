@@ -50,20 +50,11 @@
     
     manager.client.cachePolicy = RKRequestCachePolicyNone; 
 //    manager.client.authenticationType = RKRequestAuthenticationTypeNone;
-    
-    // this deprecation is due to the use of blocks for async callback
-    //[manager loadObjectsAtResourcePath:@"/_cluster/health" objectMapping:objectMapping delegate:self];
-    /*[manager loadObjectsAtResourcePath:@"/_cluster/state" objectMapping:clusterStateMapping delegate:self];*/
-    
-    NSString *clusterStateResourcePath = @"/_cluster/state";
-    
+            
     [manager.mappingProvider setMapping:clusterStateMapping forKeyPath:@""];
     
-    [manager loadObjectsAtResourcePath:clusterStateResourcePath usingBlock:^(RKObjectLoader* loader) {
-        loader.objectMapping = [[RKObjectManager sharedManager].mappingProvider objectMappingForClass:[ESRKClusterState class]];
-        loader.method = RKRequestMethodGET;
-    }];
-    
+    [manager loadObjectsAtResourcePath:@"/_cluster/state" delegate:self];
+        
 }
 
 - (void)objectLoader:(RKObjectLoader *)objectLoader didLoadObjects:(NSArray *)objects {

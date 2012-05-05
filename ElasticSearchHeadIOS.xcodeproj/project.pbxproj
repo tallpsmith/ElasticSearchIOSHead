@@ -31,6 +31,8 @@
 		7E1AEDF915538C0A0068BB8E /* ESRKClusterHealth.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E1AEDF415538C0A0068BB8E /* ESRKClusterHealth.m */; };
 		7E1AEDFA15538C0A0068BB8E /* ESRKNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E1AEDF615538C0A0068BB8E /* ESRKNode.m */; };
 		7E1AEDFB15538C0A0068BB8E /* ESRKClusterState.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E1AEDF815538C0A0068BB8E /* ESRKClusterState.m */; };
+		7E1AEE0C155540E30068BB8E /* ESRKClusterOverviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E1AEE0B155540E30068BB8E /* ESRKClusterOverviewController.m */; };
+		7E1AEE1C15554EC60068BB8E /* ESRKClusterTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E1AEE1B15554EC60068BB8E /* ESRKClusterTabBarController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +116,10 @@
 		7E1AEDF815538C0A0068BB8E /* ESRKClusterState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESRKClusterState.m; sourceTree = "<group>"; };
 		7E1AEE02155391B30068BB8E /* StatusToColourTransformer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StatusToColourTransformer.h; sourceTree = "<group>"; };
 		7E1AEE03155391B30068BB8E /* StatusToColourTransformer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StatusToColourTransformer.m; sourceTree = "<group>"; };
+		7E1AEE0A155540E30068BB8E /* ESRKClusterOverviewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESRKClusterOverviewController.h; sourceTree = "<group>"; };
+		7E1AEE0B155540E30068BB8E /* ESRKClusterOverviewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESRKClusterOverviewController.m; sourceTree = "<group>"; };
+		7E1AEE1A15554EC60068BB8E /* ESRKClusterTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESRKClusterTabBarController.h; sourceTree = "<group>"; };
+		7E1AEE1B15554EC60068BB8E /* ESRKClusterTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESRKClusterTabBarController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -238,6 +244,10 @@
 		7E1AEDFD15538C1B0068BB8E /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				7E1AEE1A15554EC60068BB8E /* ESRKClusterTabBarController.h */,
+				7E1AEE1B15554EC60068BB8E /* ESRKClusterTabBarController.m */,
+				7E1AEE0A155540E30068BB8E /* ESRKClusterOverviewController.h */,
+				7E1AEE0B155540E30068BB8E /* ESRKClusterOverviewController.m */,
 				7E00CA6A1552B57A000B5945 /* ESRKServerViewController.h */,
 				7E00CA6B1552B57A000B5945 /* ESRKServerViewController.m */,
 				7E00CA5B1552967E000B5945 /* ESRKConnectionViewController.h */,
@@ -374,6 +384,8 @@
 				7E1AEDF915538C0A0068BB8E /* ESRKClusterHealth.m in Sources */,
 				7E1AEDFA15538C0A0068BB8E /* ESRKNode.m in Sources */,
 				7E1AEDFB15538C0A0068BB8E /* ESRKClusterState.m in Sources */,
+				7E1AEE0C155540E30068BB8E /* ESRKClusterOverviewController.m in Sources */,
+				7E1AEE1C15554EC60068BB8E /* ESRKClusterTabBarController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

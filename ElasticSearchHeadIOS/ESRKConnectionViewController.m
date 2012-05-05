@@ -10,6 +10,7 @@
 #import "ESRKServerViewController.h"
 #import "ESRKNode.h"
 #import "ESRKClusterState.h"
+#import "ESRKClusterHealth.h"
 
 @interface ESRKConnectionViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *host;
@@ -75,12 +76,19 @@
     
     [clusterStateMapping mapKeyPath:@"nodes" toRelationship:@"nodes" withMapping:nodeMapping];
     
+    RKObjectMapping *clusterHealthMapping = [RKObjectMapping mappingForClass:[ESRKClusterHealth class]];
+     [clusterHealthMapping mapKeyPath:@"cluster_name" toAttribute:@"clusterName"];
+     [clusterHealthMapping mapKeyPath:@"status" toAttribute:@"status"];
+     
+    
+    
     RKObjectManager *manager =  [RKObjectManager objectManagerWithBaseURL:[NSURL URLWithString:baseURL]] ;
     
     manager.client.cachePolicy = RKRequestCachePolicyNone; 
     
     // we register this mapping against the object, but can't put it against a key path
     [manager.mappingProvider addObjectMapping:clusterStateMapping];
+    [manager.mappingProvider addObjectMapping:clusterHealthMapping];
     
 }
 

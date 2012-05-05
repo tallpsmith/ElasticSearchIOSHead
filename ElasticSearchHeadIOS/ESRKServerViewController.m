@@ -29,39 +29,16 @@
 
 - (void) setUpRestKit
 {
-    NSLog(@"Connecting to %@", [[RKClient sharedClient] baseURL]);
-    
-    RKObjectMapping *nodeMapping = [RKObjectMapping mappingForClass:[ESRKNode class]];
-    nodeMapping.forceCollectionMapping=YES;
-    
-    [nodeMapping mapKeyOfNestedDictionaryToAttribute:@"nodeId"];
-    
-    [nodeMapping mapKeyPath:@"(nodeId).name" toAttribute:@"nodeName"];
-    [nodeMapping mapKeyPath:@"(nodeId).transport_address" toAttribute:@"transportAddress"];
-    
-    RKObjectMapping *clusterStateMapping = [RKObjectMapping mappingForClass:[ESRKClusterState class]];
-    [clusterStateMapping mapKeyPath:@"cluster_name" toAttribute:@"clusterName"];
-    [clusterStateMapping mapKeyPath:@"master_node" toAttribute:@"masterNode"];
-    
-    [clusterStateMapping mapKeyPath:@"nodes" toRelationship:@"nodes" withMapping:nodeMapping];
-    
-    NSURL *baseURL = [RKClient sharedClient].baseURL;
-    RKObjectManager *manager =  [RKObjectManager objectManagerWithBaseURL:baseURL] ;
-    
-    manager.client.cachePolicy = RKRequestCachePolicyNone; 
-//    manager.client.authenticationType = RKRequestAuthenticationTypeNone;
-            
-    [manager.mappingProvider setMapping:clusterStateMapping forKeyPath:@""];
-    
+    RKObjectManager *manager = [RKObjectManager sharedManager];
+
+    // retrieve the already registered Cluster State mapping and register it for the root key path of this URL
+    RKObjectMapping *clusterStateMapping = [manager.mappingProvider objectMappingForClass:[ESRKClusterState class]];
+    [manager.mappingProvider setObjectMapping:clusterStateMapping forKeyPath:@""];
     [manager loadObjectsAtResourcePath:@"/_cluster/state" delegate:self];
         
 }
 
 - (void)objectLoader:(RKObjectLoader *)objectLoader didLoadObjects:(NSArray *)objects {
-    //ESRKClusterHealth *newClusterHealth = [objects objectAtIndex:0];
-    //NSLog(@"Loaded Cluster Health -> ClusterName: %@, Status: %@", newClusterHealth.clusterName, newClusterHealth.status);
-    //self.clusterHealth = newClusterHealth;
-    
     self.clusterState = [objects objectAtIndex:0];
     
     [self.tableView reloadData];
@@ -94,7 +71,7 @@
 {
     self = [super initWithStyle:style];
     if (self) {
-        [self setUpRestKit];
+        // [self setUpRestKit];
     }
     return self;
 }
@@ -130,25 +107,22 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
     return self.clusterState.nodes.count;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+- (UITableViewCell *)tableView:(UITableView *)theTableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    UITableViewCell *cell = [theTableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     // Configure the cell...
-    NSString *cellText;
     
     ESRKNode *node = [self.clusterState.nodes objectAtIndex:indexPath.row];
     

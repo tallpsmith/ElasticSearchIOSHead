@@ -8,6 +8,8 @@
 
 #import "ESRKConnectionViewController.h"
 #import "ESRKServerViewController.h"
+#import "ESRKNode.h"
+#import "ESRKClusterState.h"
 
 @interface ESRKConnectionViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *host;
@@ -54,11 +56,31 @@
     
     NSString *sslSuffix = shouldUseSSL?@"s":@"";
     
-    NSString *baseUrl = [NSString stringWithFormat:@"http%@://%@:%@/",sslSuffix, [self.host text], [self.port text]];
+    NSString *baseURL = [NSString stringWithFormat:@"http%@://%@:%@/",sslSuffix, [self.host text], [self.port text]];
     
-    RKClient *client = [RKClient clientWithBaseURLString:baseUrl];
     
-    [RKClient setSharedClient:client];
+    NSLog(@"Connecting to %@", baseURL);
+    
+    RKObjectMapping *nodeMapping = [RKObjectMapping mappingForClass:[ESRKNode class]];
+    nodeMapping.forceCollectionMapping=YES;
+    
+    [nodeMapping mapKeyOfNestedDictionaryToAttribute:@"nodeId"];
+    
+    [nodeMapping mapKeyPath:@"(nodeId).name" toAttribute:@"nodeName"];
+    [nodeMapping mapKeyPath:@"(nodeId).transport_address" toAttribute:@"transportAddress"];
+    
+    RKObjectMapping *clusterStateMapping = [RKObjectMapping mappingForClass:[ESRKClusterState class]];
+    [clusterStateMapping mapKeyPath:@"cluster_name" toAttribute:@"clusterName"];
+    [clusterStateMapping mapKeyPath:@"master_node" toAttribute:@"masterNode"];
+    
+    [clusterStateMapping mapKeyPath:@"nodes" toRelationship:@"nodes" withMapping:nodeMapping];
+    
+    RKObjectManager *manager =  [RKObjectManager objectManagerWithBaseURL:[NSURL URLWithString:baseURL]] ;
+    
+    manager.client.cachePolicy = RKRequestCachePolicyNone; 
+    
+    // we register this mapping against the object, but can't put it against a key path
+    [manager.mappingProvider addObjectMapping:clusterStateMapping];
     
 }
 

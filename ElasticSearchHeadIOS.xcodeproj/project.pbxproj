@@ -33,6 +33,8 @@
 		7E1AEDFB15538C0A0068BB8E /* ESRKClusterState.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E1AEDF815538C0A0068BB8E /* ESRKClusterState.m */; };
 		7E1AEE0C155540E30068BB8E /* ESRKClusterOverviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E1AEE0B155540E30068BB8E /* ESRKClusterOverviewController.m */; };
 		7E1AEE1C15554EC60068BB8E /* ESRKClusterTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E1AEE1B15554EC60068BB8E /* ESRKClusterTabBarController.m */; };
+		7E1AEE1F155646D10068BB8E /* ESRKNodeProcessInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E1AEE1E155646D10068BB8E /* ESRKNodeProcessInfo.m */; };
+		7E1AEE2215564C7A0068BB8E /* ESRKNodeInfoViewControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E1AEE2115564C7A0068BB8E /* ESRKNodeInfoViewControllerViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,6 +122,10 @@
 		7E1AEE0B155540E30068BB8E /* ESRKClusterOverviewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESRKClusterOverviewController.m; sourceTree = "<group>"; };
 		7E1AEE1A15554EC60068BB8E /* ESRKClusterTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESRKClusterTabBarController.h; sourceTree = "<group>"; };
 		7E1AEE1B15554EC60068BB8E /* ESRKClusterTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESRKClusterTabBarController.m; sourceTree = "<group>"; };
+		7E1AEE1D155646D10068BB8E /* ESRKNodeProcessInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESRKNodeProcessInfo.h; sourceTree = "<group>"; };
+		7E1AEE1E155646D10068BB8E /* ESRKNodeProcessInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESRKNodeProcessInfo.m; sourceTree = "<group>"; };
+		7E1AEE2015564C7A0068BB8E /* ESRKNodeInfoViewControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESRKNodeInfoViewControllerViewController.h; sourceTree = "<group>"; };
+		7E1AEE2115564C7A0068BB8E /* ESRKNodeInfoViewControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESRKNodeInfoViewControllerViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -235,6 +241,8 @@
 				7E1AEDF415538C0A0068BB8E /* ESRKClusterHealth.m */,
 				7E1AEDF515538C0A0068BB8E /* ESRKNode.h */,
 				7E1AEDF615538C0A0068BB8E /* ESRKNode.m */,
+				7E1AEE1D155646D10068BB8E /* ESRKNodeProcessInfo.h */,
+				7E1AEE1E155646D10068BB8E /* ESRKNodeProcessInfo.m */,
 				7E1AEDF715538C0A0068BB8E /* ESRKClusterState.h */,
 				7E1AEDF815538C0A0068BB8E /* ESRKClusterState.m */,
 			);
@@ -252,6 +260,8 @@
 				7E00CA6B1552B57A000B5945 /* ESRKServerViewController.m */,
 				7E00CA5B1552967E000B5945 /* ESRKConnectionViewController.h */,
 				7E00CA5C1552967E000B5945 /* ESRKConnectionViewController.m */,
+				7E1AEE2015564C7A0068BB8E /* ESRKNodeInfoViewControllerViewController.h */,
+				7E1AEE2115564C7A0068BB8E /* ESRKNodeInfoViewControllerViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -386,6 +396,8 @@
 				7E1AEDFB15538C0A0068BB8E /* ESRKClusterState.m in Sources */,
 				7E1AEE0C155540E30068BB8E /* ESRKClusterOverviewController.m in Sources */,
 				7E1AEE1C15554EC60068BB8E /* ESRKClusterTabBarController.m in Sources */,
+				7E1AEE1F155646D10068BB8E /* ESRKNodeProcessInfo.m in Sources */,
+				7E1AEE2215564C7A0068BB8E /* ESRKNodeInfoViewControllerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

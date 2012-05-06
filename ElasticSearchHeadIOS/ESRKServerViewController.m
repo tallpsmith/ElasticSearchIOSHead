@@ -10,20 +10,29 @@
 #import "ESRKClusterHealth.h"
 #import "ESRKNode.h"
 #import "ESRKClusterState.h"
+#import "ESRKNodeInfoViewControllerViewController.h"
+#import "ESRKNodeProcessInfo.h"
 
 @interface ESRKServerViewController () {
     ESRKClusterState *clusterState;
-}
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
+    ESRKNode *currentlySelectedNode;
 
+
+}
+//@property (weak, nonatomic) IBOutlet UITableView *tableView;
+
+@property ESRKNode *currentlySelectedNode;
 @property ESRKClusterState *clusterState;
 
 @end
 
-@implementation ESRKServerViewController
+@implementation ESRKServerViewController 
+
+
 
 @synthesize tableView;
 @synthesize clusterState;
+@synthesize currentlySelectedNode;
 
 
 
@@ -33,17 +42,26 @@
 
     // retrieve the already registered Cluster State mapping and register it for the root key path of this URL
     RKObjectMapping *clusterStateMapping = [manager.mappingProvider objectMappingForClass:[ESRKClusterState class]];
+    RKObjectMapping *nodeMapping = [manager.mappingProvider objectMappingForClass:[ESRKNode class]];
+    
+    
     [manager.mappingProvider setObjectMapping:clusterStateMapping forKeyPath:@""];
-    [manager loadObjectsAtResourcePath:@"/_cluster/state" delegate:self];
+
+    //[manager loadObjectsAtResourcePath:@"/_cluster/nodes?pretty=1&os=1&process=1&jvm=1&thread_pool=1&network=1&transport=1&http=1" delegate:self];
+    [manager loadObjectsAtResourcePath:@"/_cluster/nodes?pretty=1&process=1" delegate:self];
         
 }
 
 - (void)objectLoader:(RKObjectLoader *)objectLoader didLoadObjects:(NSArray *)objects {
-    self.clusterState = [objects objectAtIndex:0];
+    id firstObject = [objects objectAtIndex:0];
     
-    self.clusterState.nodes = [[self.clusterState.nodes sortedArrayUsingComparator:^(id a, id b) {
-        return [((ESRKNode *)a).nodeName compare: ((ESRKNode *)b).nodeName] ;
-    }] mutableCopy];
+    if([firstObject isKindOfClass:[ESRKClusterState class]]){
+        self.clusterState = firstObject;
+        
+        self.clusterState.nodes = [[self.clusterState.nodes sortedArrayUsingComparator:^(id a, id b) {
+            return [((ESRKNode *)a).nodeName compare: ((ESRKNode *)b).nodeName] ;
+        }] mutableCopy];
+    } 
     
     [self.tableView reloadData];
 
@@ -52,6 +70,18 @@
 
 - (void)objectLoader:(RKObjectLoader *)objectLoader didFailWithError:(NSError *)error {
     NSLog(@"Encountered an error: %@", error);
+}
+
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    NSString *segueIdentifier = segue.identifier;
+    
+    if([segueIdentifier isEqualToString:@"nodeInfoSegue"]){
+        ESRKNodeInfoViewControllerViewController *nodeInfoViewController = segue.destinationViewController;
+        
+        nodeInfoViewController.node = self.currentlySelectedNode;
+    }
 }
 
 
@@ -127,13 +157,17 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+
+    self.currentlySelectedNode = [self.clusterState.nodes objectAtIndex:indexPath.row];
+
+}
+
+- (void) tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
+{
+    self.currentlySelectedNode = [self.clusterState.nodes objectAtIndex:indexPath.row];
+    
+    [self performSegueWithIdentifier:@"nodeInfoSegue" sender:self];
+    
 }
 
 @end

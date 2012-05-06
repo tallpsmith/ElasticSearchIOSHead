@@ -15,8 +15,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    RKLogConfigureByName("RestKit/Network", RKLogLevelTrace);
-    
     // Override point for customization after application launch.
     return YES;
 }

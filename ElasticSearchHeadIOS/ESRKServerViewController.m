@@ -41,6 +41,10 @@
 - (void)objectLoader:(RKObjectLoader *)objectLoader didLoadObjects:(NSArray *)objects {
     self.clusterState = [objects objectAtIndex:0];
     
+    self.clusterState.nodes = [[self.clusterState.nodes sortedArrayUsingComparator:^(id a, id b) {
+        return [((ESRKNode *)a).nodeName compare: ((ESRKNode *)b).nodeName] ;
+    }] mutableCopy];
+    
     [self.tableView reloadData];
 
     
